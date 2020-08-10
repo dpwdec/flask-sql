@@ -15,6 +15,7 @@ def before():
 @app.after_request
 def after(response):
     g.session.close()
+    return response
 
 if __name__ == "__main__":
     app.run(debug=True)
